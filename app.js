@@ -13,6 +13,9 @@ const game = document.querySelector('#game'),
       message = document.querySelector('.message');
 
 // ASSIGN MIN-MAX
+// assign the min-max document elements to
+// the local min-max variables
+// allowing for easy future manipulation
 minNum.textContent = min;
 maxNum.textContent = max;
 
