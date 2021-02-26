@@ -56,3 +56,12 @@ guessBtn.addEventListener('click', function(){
     }
   };
 });
+
+// SET MESSAGE FUNCTION
+// take in a message text and a color
+// and assign them to the message queryselector
+// element
+function setMessage(msg, color){
+  message.style.color = color;
+  message.textContent = msg;
+}
