@@ -1,7 +1,7 @@
 // GAME VARIABLES
 let min = 1,
     max = 10,
-    winningNum = 2,
+    winningNum = getRandomNum(min, max),
     guessesLeft = 3;
 
 // UI SELECTORS
@@ -106,4 +106,14 @@ function setMessage(msg, color){
   // element
   message.style.color = color;
   message.textContent = msg;
+}
+
+// WINNING NUMBER FUNCTION
+function getRandomNum(min, max){
+  // taking in the min and max variables
+  // returning a number rounded down
+  // multiplying by the min and max + 1
+  // to bring the number past a decimal and 1-9 range
+  // then adding the min to fill out the complete range
+  return Math.floor(Math.random() * (max-min+1)+min);
 }
