@@ -57,11 +57,38 @@ guessBtn.addEventListener('click', function(){
   };
 });
 
+// GAME OVER FUNCTION
+function gameOver(won, msg){
+  // create a local variable to assign
+  // colors to
+  let color;
+  // if function parameter is true
+  // then set the local color to green
+  // if false set to red
+  won === true ? color = 'green' : color = 'red';
+  // disable the input indicating the game is over
+  guessInput.disabled = true;
+    // change border color to reflect the
+    // win or loss status
+    guessInput.style.borderColor = color;
+    // call the setMessage function for
+    // win or loss message display
+    // passing the msg parameter brought in
+    // by parent function
+    setMessage(msg, color);
+    // reassign the button text to ask the user
+    // if they want to play agin and assign the
+    // button class to play again to be handled by
+    // the mousedown listener
+    guessBtn.value = 'Play Again?';
+    guessBtn.className += 'play-again';
+}
+
 // SET MESSAGE FUNCTION
-// take in a message text and a color
-// and assign them to the message queryselector
-// element
 function setMessage(msg, color){
+  // take in a message text and a color
+  // and assign them to the message queryselector
+  // element
   message.style.color = color;
   message.textContent = msg;
 }
