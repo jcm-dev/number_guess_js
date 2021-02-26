@@ -12,6 +12,10 @@ const game = document.querySelector('#game'),
       guessInput = document.querySelector('#guess-input'),
       message = document.querySelector('.message');
 
+// ASSIGN MIN-MAX
+minNum.textContent = min;
+maxNum.textContent = max;
+
 // GUESS LISTENER
 guessBtn.addEventListener('click', function(){
   // take user entry and convert to int and
