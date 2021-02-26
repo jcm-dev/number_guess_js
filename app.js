@@ -1,12 +1,12 @@
 // GAME VARIABLES
 let min = 1,
-    max = 10
+    max = 10,
     winningNum = 2,
     guessesLeft = 3;
 
 // UI SELECTORS
 const game = document.querySelector('#game'),
-      minNum = document.querySelector('min-num'),
+      minNum = document.querySelector('.min-num'),
       maxNum = document.querySelector('.max-num'),
       guessBtn = document.querySelector('#guess-btn'),
       guessInput = document.querySelector('#guess-input'),
@@ -55,6 +55,17 @@ guessBtn.addEventListener('click', function(){
       setMessage(`${guess} is not correct, ${guessesLeft} guesses left`, 'red');
     }
   };
+});
+
+// PLAY AGAIN LISTENER
+game.addEventListener('mousedown', function(e){
+  // test if user wants to play again
+  // by checking if the mousedown target
+  // contains the class of play-again
+  // if so, then reload the window
+  if(e.target.className === 'play-again'){
+    window.location.reload();
+  }
 });
 
 // GAME OVER FUNCTION
