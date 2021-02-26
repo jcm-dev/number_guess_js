@@ -63,6 +63,10 @@ game.addEventListener('mousedown', function(e){
   // by checking if the mousedown target
   // contains the class of play-again
   // if so, then reload the window
+  // using mousedown instead of click because click
+  // would trigger from the guess so if the guess was right then
+  // the form would automatocially reload without displaying
+  // the winning text etc
   if(e.target.className === 'play-again'){
     window.location.reload();
   }
